@@ -1,0 +1,39 @@
+{
+  "name": "ts-monorepo-template-server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist/app.js",
+  "scripts": {
+    "dev:base": "cross-env NODE_ENV=development ts-node-dev --respawn --rs --transpile-only --project tsconfig.build.json -r tsconfig-paths/register -r dotenv/config",
+    "dev": "npm run dev:base -- src/app.ts",
+    "dev:inspect": "npm run dev:base -- --inspect -- src/app.ts",
+    "clean": "rimraf dist *.tsbuildinfo",
+    "tsc": "tsc -b tsconfig.build.json",
+    "build": "npm-run-all clean tsc",
+    "start": "cross-env NODE_ENV=production node -r dotenv/config ."
+  },
+  "author": "Botao <wxt2005@gmail.com> (https://github.com/wxt2005)",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/wxt2005/ts-monorepo-template.git",
+    "directory": "packages/server"
+  },
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "axios": "^0.22.0",
+    "express": "^4.17.1",
+    "express-validator": "^6.13.0",
+    "fs-extra": "^10.0.0",
+    "lodash": "^4.17.21",
+    "pino-http": "^5.8.0",
+    "pino-pretty": "^7.1.0"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.13",
+    "@types/fs-extra": "^9.0.13",
+    "@types/lodash": "^4.14.175",
+    "@types/pino-http": "^5.8.0",
+    "@types/pinyin": "^2.10.0"
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "name": "ts-monorepo-template-shared",
+  "version": "1.0.0",
+  "main": "dist/index.js",
+  "description": "",
+  "scripts": {
+    "clean": "rimraf dist *.tsbuildinfo",
+    "tsc": "tsc -b tsconfig.build.json",
+    "build": "npm-run-all clean tsc"
+  },
+  "author": "Botao <wxt2005@gmail.com> (https://github.com/wxt2005)",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/wxt2005/ts-monorepo-template.git",
+    "directory": "packages/shared"
+  },
+  "license": "MIT",
+  "private": true
+}
